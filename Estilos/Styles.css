@@ -9,39 +9,19 @@ body {
     text-align: justify;
     font-size: large;  
     background-color:#F1F1F1;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
 }
 p{
     text-align: justify;
     font-size: 90%;
+    margin: 10px;
 }
-
-nav {
-    display: flexbox;
-    text-align: center;
-    justify-content: space-between;
-    font-weight:bold;
-    background-color:#CFDDFF;
-    height: 2em;
-    text-decoration: none;
-}
-
-ul li{
-    display: inline-block;
-    padding: 0 1em;
-    justify-content: center;
-}
-
-a{
-    font-size: 700;
-    color:gray;
-    text-decoration: none;
-    
-}
-
-a:hover {
-    color: black;
-    background-color: #648FF6;
+#Logo-Nav {
+    width: 40px;
+    height: 40px;
 }
 
 h1{
@@ -89,40 +69,68 @@ footer div p {
 
 /* CSS para Pagina de Servicios*/
 /* cambia tamaño y presentacion horizontal en responsive*/
-.imagen-equipo {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+.contenedor-equipo{
+    display: flex;
     text-align: center;
-    align-content: space-around;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
 }
-#cardAlexis {
-    width: 15em;
-    grid-column-start: 2;
-    grid-row-start: 1;
+.contenedor-equipo figure{
+    margin: 0 5%;
+    position: relative;
+    align-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0, .5);
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+}
+.contenedor-equipo figure img {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+.contenedor-equipo figure .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #cfddffb6;
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+.contenedor-equipo figure .capa h4{
+    font-weight: 600;
     text-align: center;
-
+    transition: all 500ms ease-out;
+    margin-top: 20px;
+    margin-bottom: 80px;
 }
-#cardNicolas{
-    width: 15em;
-    grid-column-start: 4;
-    grid-row-start: 1;
+.contenedor-equipo figure .capa p{
+    font-weight: 300;
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+.contenedor-equipo figure:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor-equipo figure:hover > .capa h4{
+    margin-top: 40%;
     text-align: center;
 }
-#cardSourcer{
-    width: 15em;
-    grid-column-start: 3;
-    grid-row-start: 2;
+.contenedor-equipo figure:hover > .capa p{
     text-align: center;
-    padding-top: 15%;
 }
-.card-text{
-    font-size: 75%;
-    align-items: center center;
-}
-.logo-linkedin {
-    align-items: center center;
-    justify-content: space-around;
-
+.contenedor-equipo figure:hover > img {
+    transform: scale(1.5);
 }
 /* CSS para Pagina de servicios*/
 /*Cambia tamaño de imagen en responsive*/
@@ -161,7 +169,6 @@ form{
     align-items: center;
     font-size: 14px;
 }
-
 .container {
     display: grid;
     place-items: center;
@@ -179,44 +186,73 @@ input {
 *{
     font-size: xx-small;
 }
+
     ul li{
     font-size: small;
 };
-
-.contenedor-footer img{
-    max-width: 22%;
-    margin-right: 15px;
-}
-
-.imagen-equipo {
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: repeat(3 1fr);
-
-}
-#cardAlexis {
-    width: 100%;
-    grid-column-start: 2;
-    grid-row-start: 1;
+.contenedor-equipo{
+    display: flex;
     text-align: center;
-    padding-top: 3%;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
 }
-#cardNicolas{
+.contenedor-equipo figure{
+    margin: 0 5%;
+    position: relative;
+    align-content: center;
+    overflow: hidden;
+    border-radius: 7px;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0, .5);
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+}
+.contenedor-equipo figure img {
     width: 100%;
-    grid-column-start: 2;
-    grid-row-start: 2;
-    text-align: center;
-    padding-top: 5%;
-
+    height: 100%;
+    transition: all 500ms ease-out;
 }
-#cardSourcer{
+.contenedor-equipo figure .capa {
+    position: absolute;
+    top: 0;
     width: 100%;
-    grid-column-start: 2;
-    grid-row-start: 3;
-    text-align: center;
-    padding-top: 5%;
+    height: 100%;
+    background: #cfddffb6;
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
 }
-
+.contenedor-equipo figure .capa h4{
+    font-weight: 500;
+    text-align: center;
+    transition: all 500ms ease-out;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.contenedor-equipo figure .capa p{
+    font-weight: 200;
+    text-align: center;
+    font-size: 7px;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+.contenedor-equipo figure:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor-equipo figure:hover > .capa h4{
+    margin-top: 50%;
+    text-align: center;
+}
+.contenedor-equipo figure:hover > .capa p{
+    text-align: center;
+}
+.contenedor-equipo figure:hover > img {
+    transform: scale(1.2);
+}
 .accordion-body-servicios{
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -254,38 +290,68 @@ Form p {
     ul li{
         font-size: medium;
     };
-
-    .contenedor-footer img{
-        max-width: 18%;
-        margin-right: 10px;
-    }
-
-    .imagen-equipo {
-        display: grid;
-        grid-template-columns: repeat(5 1fr);
+    .contenedor-equipo{
+        display: flex;
         text-align: center;
-        align-content: space-around;
+        align-content: space-between;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
     }
-    #cardAlexis {
-        width: 12em;
-        grid-column-start: 2;
-        grid-row-start: 1;
-        text-align: center;
-    
+    .contenedor-equipo figure{
+        margin: 0 5%;
+        position: relative;
+        align-content: center;
+        overflow: hidden;
+        border-radius: 9px;
+        box-shadow: 0px 1px 10px rgb(0, 0, 0, .5);
+        cursor: pointer;
+        width: 200px;
+        height: 200px;
     }
-    #cardNicolas{
-        width: 12em;
-        grid-column-start: 4;
-        grid-row-start: 1;
+    .contenedor-equipo figure img {
+        width: 100%;
+        height: 100%;
+        transition: all 500ms ease-out;
+    }
+    .contenedor-equipo figure .capa {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #cfddffb6;
+        transition: all 500ms ease-out;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .contenedor-equipo figure .capa h4{
+        font-weight: 600;
+        text-align: center;
+        transition: all 500ms ease-out;
+        margin-top: 10px;
+        margin-bottom: 9px;
+    }
+    .contenedor-equipo figure .capa p{
+        font-weight: 300;
+        text-align: center;
+        font-size: 9px;
+        width: 100%;
+        max-width: 220px;
+        margin: auto;
+    }
+    .contenedor-equipo figure:hover > .capa {
+        opacity: 1;
+        visibility: visible;
+    }
+    .contenedor-equipo figure:hover > .capa h4{
+        margin-top: 50%;
         text-align: center;
     }
-    #cardSourcer{
-        width: 12em;
-        grid-column-start: 3;
-        grid-row-start: 2;
+    .contenedor-equipo figure:hover > .capa p{
         text-align: center;
-        padding-top: 5%;
-        align-content: space-around;
+    }
+    .contenedor-equipo figure:hover > img {
+        transform: scale(1.3);
     }
     #imagenServicio{
         width: 20em;
